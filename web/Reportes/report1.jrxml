@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9f4fb60b-174e-41e1-a887-d10b84f41217">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Heading 1" fontSize="16" isBold="true"/>
+	<queryString>
+		<![CDATA[SELECT
+     solicitudes.`id_solicitudes` AS solicitudes_id_solicitudes,
+     solicitudes.`codigo_alumno` AS solicitudes_codigo_alumno,
+     solicitudes.`nombres` AS solicitudes_nombres,
+     solicitudes.`apellidos` AS solicitudes_apellidos,
+     solicitudes.`correo_alumno` AS solicitudes_correo_alumno,
+     solicitudes.`carrera` AS solicitudes_carrera,
+     solicitudes.`tramite` AS solicitudes_tramite,
+     solicitudes.`nombre_completo` AS solicitudes_nombre_completo,
+     solicitudes.`fecha` AS solicitudes_fecha
+FROM
+     `solicitudes` solicitudes]]>
+	</queryString>
+	<field name="solicitudes_id_solicitudes" class="java.lang.Integer"/>
+	<field name="solicitudes_codigo_alumno" class="java.lang.String"/>
+	<field name="solicitudes_nombres" class="java.lang.String"/>
+	<field name="solicitudes_apellidos" class="java.lang.String"/>
+	<field name="solicitudes_correo_alumno" class="java.lang.String"/>
+	<field name="solicitudes_carrera" class="java.lang.String"/>
+	<field name="solicitudes_tramite" class="java.lang.String"/>
+	<field name="solicitudes_nombre_completo" class="java.lang.String"/>
+	<field name="solicitudes_fecha" class="java.sql.Timestamp"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="332" splitType="Stretch">
+			<elementGroup/>
+			<break>
+				<reportElement x="0" y="170" width="100" height="1" uuid="218507cb-22f5-4e79-8374-c8da31a02695"/>
+			</break>
+			<barChart>
+				<chart>
+					<reportElement x="100" y="56" width="679" height="250" uuid="8259bcb1-4a4d-4d52-9fef-6c5a5b49f0bf"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{solicitudes_tramite}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{solicitudes_tramite}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{solicitudes_id_solicitudes}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</summary>
+</jasperReport>

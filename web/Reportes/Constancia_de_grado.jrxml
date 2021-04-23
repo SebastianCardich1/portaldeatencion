@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9aee2c0f-d940-4665-8e17-e7f35fab4cad">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="codigo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     solicitudes.`codigo_alumno` AS solicitudes_codigo_alumno,
+     solicitudes.`nombres` AS solicitudes_nombres,
+     solicitudes.`apellidos` AS solicitudes_apellidos,
+     solicitudes.`correo_alumno` AS solicitudes_correo_alumno,
+     solicitudes.`carrera` AS solicitudes_carrera,
+     solicitudes.`tramite` AS solicitudes_tramite,
+     solicitudes.`nombre_completo` AS solicitudes_nombre_completo
+FROM
+     `solicitudes` solicitudes where codigo_alumno=$P{codigo};]]>
+	</queryString>
+	<field name="solicitudes_codigo_alumno" class="java.lang.String"/>
+	<field name="solicitudes_nombres" class="java.lang.String"/>
+	<field name="solicitudes_apellidos" class="java.lang.String"/>
+	<field name="solicitudes_correo_alumno" class="java.lang.String"/>
+	<field name="solicitudes_carrera" class="java.lang.String"/>
+	<field name="solicitudes_tramite" class="java.lang.String"/>
+	<field name="solicitudes_nombre_completo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="249" y="18" width="139" height="61" uuid="150f30d5-1c53-4bb3-84da-5b2a0282974f"/>
+				<imageExpression><![CDATA["C:\\Users\\SEBASTIAN\\Desktop\\MVC_DAO_MYSQL1\\MVC_DAO_MYSQL1\\MVC_DAO_MYSQL\\web\\image\\LOGOSDP.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="68" splitType="Stretch">
+			<staticText>
+				<reportElement x="63" y="13" width="448" height="55" uuid="e1959dc2-f9ca-43f5-90f0-195cd5a24d8b"/>
+				<textElement>
+					<font size="30"/>
+				</textElement>
+				<text><![CDATA[CONSTANCIA DE ESTUDIOS]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="466" splitType="Stretch">
+			<staticText>
+				<reportElement x="230" y="65" width="178" height="20" uuid="8364e4d7-9247-477a-94c1-d524598240fc"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[, identificado con código]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="122" y="65" width="108" height="20" uuid="f8c07170-67c3-475b-8c6f-7ca57dd811fb"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{solicitudes_apellidos}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="35" width="541" height="20" uuid="101d416c-8af8-4c4a-bff6-0bc085305f6d"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[La oficina administrativa del colegio Santo Domingo el Predicador deja constancia al ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="96" width="524" height="20" uuid="b9c20ce9-5a5d-4c6f-bf30-57cbb28526ff"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[ matriculado en el periodo lectivo del 2021 cursando el ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="130" width="524" height="20" uuid="734d48ba-58ae-41ff-b725-f043a8abaa1a"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Se expide la presente constncia a solcitud del interesado y para los fines que este]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="388" y="65" width="81" height="20" uuid="46830766-c3a7-45eb-bc86-3060ccc6f2c2"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{solicitudes_codigo_alumno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="65" width="112" height="20" uuid="73cb157f-3662-43e4-a29f-1b7f3f71ba5a"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{solicitudes_nombres}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="469" y="65" width="65" height="20" uuid="472e34f8-a5f8-488e-a609-a453dfd7ef4d"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[que esta]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="371" y="96" width="163" height="20" uuid="6d3e3701-a373-4652-8fa3-470dd619244f"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{solicitudes_carrera}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="388" y="203" width="146" height="27" uuid="83cc32ee-951b-4b18-af48-2ea1d6d1b73e"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="165" width="524" height="20" uuid="59ba85d3-8b8c-41cd-8c08-d19a57a43419"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[estime convenientemente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="292" width="524" height="29" uuid="31470a6e-af7a-4d74-8c91-d2a105a5834f"/>
+				<textElement textAlignment="Justified">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[                                                   Atentamente,]]></text>
+			</staticText>
+			<image>
+				<reportElement x="249" y="321" width="112" height="79" uuid="061b29db-e37f-47f3-8e1f-9bfab3655382"/>
+				<imageExpression><![CDATA["C:\\Users\\SEBASTIAN\\Pictures\\firma.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="10" y="435" width="524" height="31" uuid="55acd08a-8aaa-45c6-a2cf-5e39b0a9e9b0"/>
+				<textElement textAlignment="Justified">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[                                                 Secretaria General]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="406" width="524" height="29" uuid="81c6d4c1-bbbd-4d9a-878f-fc1dd8c8e301"/>
+				<textElement textAlignment="Justified">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[                                                Roxana Muñoz Castillo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
